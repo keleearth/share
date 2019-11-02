@@ -5,6 +5,36 @@
     <title>搭建网站</title>
 </head>
 <body>
-
+要搭建一个网站，并让别人能够访问你的网站，就需要一台服务器<br/>
+<ul>
+    <li>申请服务器</li>
+        服务器申请：本人的申请的是阿里云服务器，所以直接到阿里云上买就行了，选用的系统是ubuntu 16.04.6 LTS
+    <li>安装web服务器软件</li>
+    web服务器有很多种，我选用的是ngnix,安装环境linux ubuntu 16.04.6 LTS,下面是安装步骤
+    <ol>
+        <li>安装必要依赖</li>
+        sudo apt install curl gnupg2 ca-certificates lsb-release
+        <li>设置ngnix包的仓库</li>
+        echo "deb http://nginx.org/packages/mainline/ubuntu `lsb_release -cs` nginx" \
+        | sudo tee /etc/apt/sources.list.d/nginx.list
+        <li>导入ngnix官方签名验证真假</li>
+        curl -fsSL https://nginx.org/keys/nginx_signing.key | sudo apt-key add -
+        <li>验证真假</li>
+        sudo apt-key fingerprint ABF5BD827BD9BF62.
+        <br/>
+        如果输出下列字样，说明没问题
+        <br/>
+        pub   rsa2048 2011-08-19 [SC] [expires: 2024-06-14]
+        <br/>
+        573B FD6B 3D8F BC64 1079  A6AB ABF5 BD82 7BD9 BF62
+        <br/>
+        uid   [ unknown] nginx signing key <signing-key@nginx.com>
+        <br/>
+        <li>安装ngnix</li>
+        sudo apt update
+        <br/>
+        sudo apt install nginx
+    </ol>
+</ul>
 </body>
 </html>
