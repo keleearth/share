@@ -1,3 +1,15 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea
-#vuedemo
+/vuedemo/*/node_modules/
+/vuedemo/demo1/node_modules/
+/vuedemo/*/dist/
+/vuedemo/*/npm-debug.log*
+/vuedemo/*/yarn-debug.log*
+/vuedemo/*/yarn-error.log*
+
+# Editor directories and files
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
