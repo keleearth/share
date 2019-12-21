@@ -1,13 +1,12 @@
 <template>
     <div>
-      <p>这是一个商品列表页面</p>
-
+      <span>这是一个图片页面</span>
     </div>
 </template>
 
 <script>
     export default {
-        name: "GoodLists"
+        name: "Img"
     }
 </script>
 

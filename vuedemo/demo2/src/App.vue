@@ -6,6 +6,10 @@
     <Counter v-bind:num ="num" v-on:incre="increment" v-on:decre="decrement"></Counter>
     <p><span>{{num}}</span></p>
     <router-view></router-view>
+    <router-link to="/img">图片</router-link>
+    <router-link to="/title">标题</router-link>
+    <button v-on:click="showImg">点击出现图片页面</button>
+    <button v-on:click="showTitle">点击出现标题页面</button>
   </div>
 </template>
 
@@ -29,6 +33,12 @@
         },
         decrement(){
             this.num--;
+        },
+        showImg(){
+            this.$router.push("Img");
+        },
+        showTitle(){
+            this.$router.push({path:"/title",query:{a:"123"}});
         }
     }
   }
