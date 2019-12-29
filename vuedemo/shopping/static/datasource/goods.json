@@ -1,0 +1,30 @@
+{
+  "status": "0",
+  "msg":"",
+  "result": [
+    {
+      "productId": "a",
+      "productImg": "1.jpg",
+      "productName": "水杯",
+      "productPrice": 100.00
+    },
+    {
+      "productId": "b",
+      "productImg": "2.jpg",
+      "productName": "耳机",
+      "productPrice": 225.00
+    },
+    {
+      "productId": "c",
+      "productImg": "3.jpg",
+      "productName": "头戴式耳机",
+      "productPrice": 500.00
+    },
+    {
+      "productId": "d",
+      "productImg": "4.jpg",
+      "productName": "头戴式耳机",
+      "productPrice": 450.00
+    }
+  ]
+}
