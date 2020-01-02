@@ -6,6 +6,7 @@
 /vuedemo/*/npm-debug.log*
 /vuedemo/*/yarn-debug.log*
 /vuedemo/*/yarn-error.log*
+/vuedemo/*/*.iml
 
 # Editor directories and files
 .vscode
