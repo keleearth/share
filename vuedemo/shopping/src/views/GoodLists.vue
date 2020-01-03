@@ -37,7 +37,7 @@
                 <ul>
                   <li v-for="(item,index) in goodLists">
                     <div class="pic">
-                      <a href="#"><img v-bind:src="'../../static/image/'+item.productImg" alt=""></a>
+                      <a href="#"><img v-bind:src="'../../static/image/'+item.productImage" alt=""></a>
                     </div>
                     <div class="main">
                       <div class="name">{{item.productName}}</div>
@@ -83,8 +83,8 @@
         },
         methods:{
             getGoodList(){
-              axios.get("static/datasource/goods.json").then(res=>{
-                  this.goodLists = res.data.result;
+              axios.get("/goods").then(res=>{
+                  this.goodLists = res.data.list;
                   console.log(res.data);
               })
             }
