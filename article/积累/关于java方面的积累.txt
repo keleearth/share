@@ -1,0 +1,25 @@
+WEB开发 常用框架
+spring ,spring mvc， mybatis，themlef模版引擎，服务器tomcat
+还有一个大一统的springboot,管理springboot的springcloud等
+数据库 mysql,oracle,mongondb,redis等
+
+关于web开发，主要采用的主要是分层的思想，数据层，服务层，展示层，所以
+每一层用啥组件开发就都是确定的，由于java中操作数据库可以统一使用jdbc操作，所以，数据持久层层面就衍生出了
+mybatis,Hibernate等这样的orm框架，所以我们会定义各种各样的数据model.
+服务层 service，处理从前端接受到的数据，交给数据层进行持久化操作。
+展示层，将拿到的数据渲染成html,然后交给浏览器渲染。分层主要是为了方便进行扩展和修改。但每一层却可以使用不同的语言来写，
+比如说展示层界面可以完全使用js语言来写，服务层使用java语言写，数据层使用其它语言来写。他们之间的数据交互格式，自己定义
+就行了，而我所接触的项目中，看到他们写的controller,service,dao包啥的，说真的，这真的就是分层的思想吗，给我的感觉反而
+比直接写更麻烦了，但是效果好像并没有起到多大的改变，该定义的路由和该有的数据操作真是一个都不能少
+
+消息队列组件，activeMQ,RabbitMQ,Kafka等
+
+跨服务技术 webservice ,rpc框架，httpclient，发送http请求
+redis数据库操作 ，jedis, mongodb客户端工具 ，mongodb plugin
+
+文件操作，common-io库
+mavean 库管理
+
+
+
+
