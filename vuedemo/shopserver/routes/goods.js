@@ -14,21 +14,27 @@ mongoose.connection.on("disconnected",function(){
 let router = express.Router();
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-    Goods.find({},function(error,doc){
-        if(error){
-            res.json({
-                status:'1',
-                msg:error.msg
-            })
-        }else{
-            res.json({
-                status:'0',
-                msg:'success',
-                count:doc.length,
-                list:doc
-            })
-        }
-    })
+    let sortFlag = parseInt(req.param("sortFlag"));
+    let pageNo = parseInt(req.param("pageNo"));
+    let pageSize = parseInt(req.param("pageSize"));
+    let startPageNum = (pageNo - 1) * pageSize;
+    Goods.find({})
+        .skip(startPageNum).limit(pageSize).sort({"productPrice":sortFlag})
+        .exec(function(error,doc){
+            if(error){
+                res.json({
+                    status:'1',
+                    msg:error.msg
+                })
+            }else{
+                res.json({
+                    status:'0',
+                    msg:'success',
+                    count:doc.length,
+                    list:doc
+                })
+            }
+        })
     // res.send('hello');
 });
 
