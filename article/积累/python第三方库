@@ -1,0 +1,14 @@
+Django 开源web开发框架
+webpy 一个小巧的web开发框架
+Matplotlib matalab的第三方库，绘制数学二维图形
+SciPy 基于python的matalab实现
+NumPy 科学计算的第三方库，提供矩阵，线代，傅里叶变换操作
+PyGtk GUI程序开发GTK+库
+PyQt  Qt开发库
+WxPython gui变成框架
+BeautifulSoup html/xml解析库
+PIL  图像处理库
+MYSQLdb 连接MySQL数据库
+Pygame 开发游戏和多媒体的一个框架
+Py2exe 将python脚本转成windows下的exe执行文件
+pefile windowsPE文件解析器

@@ -2,6 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import GoodLists from '@/views/GoodLists'
 import VueLazyload from 'vue-lazyload'
+import infiniteScroll from 'vue-infinite-scroll'
+
+Vue.use(infiniteScroll)
 Vue.use(VueLazyload, {
   preLoad: 1.3,
   loading: '/static/loading-svg/loading-balls.svg',

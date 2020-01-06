@@ -18,6 +18,9 @@ mybatis,Hibernate等这样的orm框架，所以我们会定义各种各样的数
 redis数据库操作 ，jedis, mongodb客户端工具 ，mongodb plugin
 
 文件操作，common-io库
+apaceh的一个公共操作类库 apache-common
+poi office表格和word文档处理库
+itext 生成pdf的一个报表组件
 mavean 库管理
 
 

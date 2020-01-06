@@ -42,6 +42,9 @@
                   </li>
                 </ul>
               </div>
+              <div v-infinite-scroll="loadMore" v-show="!busy" infinite-scroll-disabled="busy" infinite-scroll-distance="0">
+                加载中...
+              </div>
             </div>
           </div>
         </div>
@@ -75,9 +78,10 @@
                 overLayFlag:false,  //遮罩
                 filterBy: false,   //价格弹出层
 
-                pageSize:12,
+                pageSize:8,
                 pageNo:1,
-                sortFlag:false    //true 升序 false降序
+                sortFlag:false,    //true 升序 false降序
+                busy: false    //分页插件使用
 
             }
         },
@@ -96,11 +100,22 @@
                     pageNo:this.pageNo,
                     sortFlag:this.sortFlag? 0:-1
                 };
+
                 axios.get("/goods",{
                     params:param
                 }).then(res=>{
-                    this.goodLists = res.data.list
-                    console.log(res.data);
+                    //判断是否请求数据成功
+                    if(res.data.status == "0"){
+                        if(res.data.list.length == 0){
+                            this.busy = true;
+                        }else{
+                            this.goodLists = this.goodLists.concat(res.data.list);
+                            this.busy = false;
+                        }
+                    }else{
+                        this.goodLists = [];
+                    }
+                    //console.log(res.data);
                 })
             },
             showPricePop(){
@@ -117,7 +132,16 @@
             },
             reSort(){
                 this.sortFlag = !this.sortFlag;
+                this.pageNo = 1;
+                this.goodLists.length = 0;
                 this.getGoodList();
+            },
+            loadMore() {
+                this.busy = true;
+                setTimeout(() => {
+                    this.pageNo++;
+                    this.getGoodList();
+                }, 1000);
             }
         }
     }
