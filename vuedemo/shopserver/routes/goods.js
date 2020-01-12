@@ -18,7 +18,37 @@ router.get('/', function(req, res, next) {
     let pageNo = parseInt(req.param("pageNo"));
     let pageSize = parseInt(req.param("pageSize"));
     let startPageNum = (pageNo - 1) * pageSize;
-    Goods.find({})
+    let param = {}
+    let checkPriceLevel = req.param("priceChecked");
+    switch (checkPriceLevel) {
+        case "all":break;
+        case "0":param = {
+            productPrice:{
+                $gt:0,
+                $lte:100
+            }
+        };break;
+        case "1":param = {
+            productPrice:{
+                $gt:100,
+                $lte:500
+            }
+        };break;
+        case "2":param = {
+            productPrice:{
+                $gt:500,
+                $lte:1000
+            }
+        };break;
+        case "3":param = {
+            productPrice:{
+                $gt:1000,
+                $lte:2000
+            }
+        };break;
+        default : break;
+    }
+    Goods.find(param)
         .skip(startPageNum).limit(pageSize).sort({"productPrice":sortFlag})
         .exec(function(error,doc){
             if(error){

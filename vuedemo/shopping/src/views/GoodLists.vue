@@ -98,7 +98,8 @@
                 let param= {
                     pageSize:this.pageSize,
                     pageNo:this.pageNo,
-                    sortFlag:this.sortFlag? 0:-1
+                    sortFlag:this.sortFlag? 0:-1,
+                    priceChecked:this.priceChecked
                 };
 
                 axios.get("/goods",{
@@ -124,6 +125,9 @@
             },
             setPriceChecked(index){
                 this.priceChecked=index;
+                this.pageNo = 1;
+                this.goodLists.length = 0;
+                this.getGoodList();
                 this.closeFilterPop();
             },
             closeFilterPop(){
