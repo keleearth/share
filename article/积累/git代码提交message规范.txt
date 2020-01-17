@@ -1,0 +1,29 @@
+提交信息格式
+<type> (<scope>): <subject>
+//空行
+<body>
+//空行
+<footer>
+
+第一排必填 ，其中 type (必需), scope(可选), subject(必需)
+剩下的都是选填
+
+type类别说明
+   feat: 新功能
+   fix: 修复bug
+   docs: 文档更新
+   style: 代码风格调整（不影响功能的调整）
+   refactor: 重构,
+   test: 测试
+   chore: 构建过程或者辅助工具的变更
+scope：影响范围
+
+subject:本次提交的一个简短描述
+
+body:提交的详细描述
+
+footer:针对两种情况
+    1不兼容变动，对代码变动的描述，以及变动理由
+    2关闭issue，如果提交针对某个issue,那么在footer中关闭问题 close xxx,也可关闭多个
+
+特殊情况 revert: 表示撤销回滚
