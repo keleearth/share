@@ -132,7 +132,7 @@
             },
             closeFilterPop(){
                 this.overLayFlag=false;
-                this.filterBy=false
+                this.filterBy=false;
             },
             reSort(){
                 this.sortFlag = !this.sortFlag;
