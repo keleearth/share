@@ -7,6 +7,7 @@
 /vuedemo/*/yarn-debug.log*
 /vuedemo/*/yarn-error.log*
 /vuedemo/*/*.iml
+/plan/view/src/video/
 
 # Editor directories and files
 .vscode
